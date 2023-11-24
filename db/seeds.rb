@@ -1,6 +1,6 @@
 
 # Product.delete_all
-sites = [Site.last]
+sites = Site.all
 sites.each do |site|
     response = HTTParty.get(site.url)
     document = Nokogiri::HTML(response.body)
